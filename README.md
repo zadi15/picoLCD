@@ -60,3 +60,5 @@ for(int gpio = 0; gpio < 11; gpio++){
 You're now able to use picoLCD's functions as explained in `picoLCD/FUNCTIONS.md`!
 
 An example of a program using picoLCD can be found in `main.c` that writes "Hello World Mr. LCD Screen!" and then inserts a character directly using it's ascii code (from the binary character code).
+
+![alt text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/LCD.jpg)
