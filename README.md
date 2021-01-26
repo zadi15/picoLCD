@@ -7,17 +7,27 @@ of instructions to send to the screen, picoLCD attempts to make it a simpler pro
 extremely versatile. It's as simple as copying the `.c & .h` files to your project, add some
 `#include`s, set some pins and off you go!
 
-This is still very much a work in progress as I only received my Pico recently, and is primarily
-designed around 8-bit operation of a 16x2 screen. 4-bit operation is also on the way once more progress is done on the current version.
+This is still very much a work in progress.
+This is known to work on the following LCD sizes in 8-bit mode:
+16x2
+Most likely 20x4 (will be tested soon)
+Most likely 40x2 (Will be tested soon)
+Maybe 16x4, will not be able to test soon.
+
+4-bit operation is also on the way once more progress is done on the current version.
 
 Basic Instructions are below, with more detailed function documentation in 'picoLCD/FUNCTIONS.md'
 
+Current Version = 0.0.1
 ### Wiring the pico
 
 The Pico should be wired to the LCD as follows for 8-bit operation, with the Pico being plugged
 into USB:
 
 ![alt text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/picoLCD.png)
+
+Please note the LCD backlight should be powered by an external 5v power source, as the Pico may not be able to power both the LCD and
+backlight.
 
 ## Basic Usage:
 
@@ -49,4 +59,4 @@ for(int gpio = 0; gpio < 11; gpio++){
 
 You're now able to use picoLCD's functions as explained in `picoLCD/FUNCTIONS.md`!
 
-An example of a program using picoLCD can be  
+An example of a program using picoLCD can be found in `main.c` that writes "Hello World Mr. LCD Screen!" and then inserts a character directly using it's ascii code (from the binary character code).
