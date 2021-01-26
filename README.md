@@ -25,9 +25,11 @@ All you need to do is move all `.c & .h` files (found at either `picoLCD/8-bit` 
 
 At the top of your main file the following `#include`s:
 
-`#include "pico/binary_info.h"
+<pre>
+#include "pico/binary_info.h"
 #include "LCDops.h"
-#include "generalOps.h"`
+#include "generalOps.h"
+</pre>
 
 Additionally, you need to declare which GPIOs the LCD is connected to and the LCD size (Make sure these are not in `main()`). The example below is for a 16x2 LCD connected as in the above diagram.
 
@@ -37,11 +39,13 @@ Additionally, you need to declare which GPIOs the LCD is connected to and the LC
 
 Finally these pins that we just defined (excluding the LCD line length and line count values) need to be initialized, set as output and pulled low. Here is an example:
 
-`for(int gpio = 0; gpio < 11; gpio++){
+<pre>
+for(int gpio = 0; gpio < 11; gpio++){
     gpio_init(LCDpins[gpio]);
     gpio_set_dir(LCDpins[gpio], true);
     gpio_put(LCDpins[gpio], false);
-}`
+}
+</pre>
 
 You're now able to use picoLCD's functions as explained in `picoLCD/FUNCTIONS.md`!
 
