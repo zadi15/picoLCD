@@ -9,10 +9,14 @@ extremely versatile. It's as simple as copying the `.c & .h` files to your proje
 
 This is still very much a work in progress.
 This is known to work on the following LCD sizes in 8-bit mode:
-16x2
-Most likely 20x4 (will be tested soon)
-Most likely 40x2 (Will be tested soon)
-Maybe 16x4, will not be able to test soon.
+
+![16x2 status](https://img.shields.io/badge/16x2-Tested-brightgreen)
+
+![20x4 status](https://img.shields.io/badge/20x4-Testing-orange)
+
+![40x2 status](https://img.shields.io/badge/40x2-Testing-orange)
+
+![16x4 status](https://img.shields.io/badge/16x4-Untested-red)
 
 4-bit operation is also on the way once more progress is done on the current version.
 
