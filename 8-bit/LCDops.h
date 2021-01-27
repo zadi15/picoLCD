@@ -7,3 +7,4 @@ void LCDwriteMessage(char message[]);
 void LCDwriteRawMessage(char message[]);
 void LCDsendRawInstruction(int RS_PIN, int RW_PIN, char binary[]);
 void LCDwriteAscii(int code);
+void LCDdisplayControl(int display, int cursor, int blink);

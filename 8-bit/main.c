@@ -37,4 +37,5 @@ int main(){
     sleep_ms(5);
     LCDsendRawInstruction(0,0,"10000101");
     LCDwriteAscii(226);
+    LCDdisplayControl(1,0,1);
 }

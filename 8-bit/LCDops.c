@@ -30,84 +30,46 @@ void E_DATA(){
     gpio_put(LCDpins[9], false);
 }
 
+void LCDsendRawInstruction(int RS_PIN, int RW_PIN, char binary[]){
+    binIns(binary);
+    if (RW_PIN == 0){
+        gpio_put(LCDpins[10], false);
+    } else{
+        gpio_put(LCDpins[10], true);
+    }
+    if (RS_PIN == 0){
+        E_INSTRUCTION();
+    } else{
+        E_DATA();
+    }
+    gpio_put(LCDpins[9], false);
+}
+
 void LCDinit(){
     sleep_ms(8);
     //Increment mode for the cursor 0x06 - 0000 0110
-    gpio_put(LCDpins[0], false);
-    gpio_put(LCDpins[1], true);
-    gpio_put(LCDpins[2], true);
-    gpio_put(LCDpins[3], false);
-    gpio_put(LCDpins[4], false);
-    gpio_put(LCDpins[5], false);
-    gpio_put(LCDpins[6], false);
-    gpio_put(LCDpins[7], false);
-    E_INSTRUCTION();
-
+    LCDsendRawInstruction(0,0,"00000110");
     sleep_ms(8);
     //Display on, cursor on, blink on 0x0C - 0000 1111
-    gpio_put(LCDpins[0], true);
-    gpio_put(LCDpins[1], true);
-    gpio_put(LCDpins[2], true);
-    gpio_put(LCDpins[3], true);
-    gpio_put(LCDpins[4], false);
-    gpio_put(LCDpins[5], false);
-    gpio_put(LCDpins[6], false);
-    gpio_put(LCDpins[7], false);
-    sleep_ms(5);
-    E_INSTRUCTION();
-
+    LCDsendRawInstruction(0,0,"00001111");
     sleep_ms(8);
     //8-bit data bus, 2 line display 0x38 - 00111000
-    gpio_put(LCDpins[0], false);
-    gpio_put(LCDpins[1], false);
-    gpio_put(LCDpins[2], false);
     if (LCDpins[12] == 1){
-        gpio_put(LCDpins[3], false);
+        LCDsendRawInstruction(0,0,"00110000");
     } else {
-        gpio_put(LCDpins[3], true);
+        LCDsendRawInstruction(0,0,"00111000");
     }
-    gpio_put(LCDpins[4], true);
-    gpio_put(LCDpins[5], true);
-    gpio_put(LCDpins[6], false);
-    gpio_put(LCDpins[7], false);
-    E_INSTRUCTION();
 }
 void LCDclear(){
     sleep_ms(8);
     //Clear Dispaly 0x01 - 00000001
-    gpio_put(LCDpins[0], true);
-    gpio_put(LCDpins[1], false);
-    gpio_put(LCDpins[2], false);
-    gpio_put(LCDpins[3], false);
-    gpio_put(LCDpins[4], false);
-    gpio_put(LCDpins[5], false);
-    gpio_put(LCDpins[6], false);
-    gpio_put(LCDpins[7], false);
-    E_INSTRUCTION();
-
+    LCDsendRawInstruction(0,0,"00000001");
     sleep_ms(8);
     //Return Display if moved 0x02 - 00000010
-    gpio_put(LCDpins[0], false);
-    gpio_put(LCDpins[1], true);
-    gpio_put(LCDpins[2], false);
-    gpio_put(LCDpins[3], false);
-    gpio_put(LCDpins[4], false);
-    gpio_put(LCDpins[5], false);
-    gpio_put(LCDpins[6], false);
-    gpio_put(LCDpins[7], false);
-    E_INSTRUCTION();
-
+    LCDsendRawInstruction(0,0,"00000010");
     sleep_ms(8);
     //Move cursor to 0,0 0x80 - 10000000
-    gpio_put(LCDpins[0], false);
-    gpio_put(LCDpins[1], false);
-    gpio_put(LCDpins[2], false);
-    gpio_put(LCDpins[3], false);
-    gpio_put(LCDpins[4], false);
-    gpio_put(LCDpins[5], false);
-    gpio_put(LCDpins[6], false);
-    gpio_put(LCDpins[7], true);
-    E_INSTRUCTION();
+LCDsendRawInstruction(0,0,"10000000");
 }
 
 void LCDgoto(char hexstring[]){
@@ -207,22 +169,14 @@ void LCDwriteRawMessage(char message[]){
         E_DATA();
     }
 }
-void LCDsendRawInstruction(int RS_PIN, int RW_PIN, char binary[]){
-    binIns(binary);
-    if (RS_PIN == 0){
-        gpio_put(LCDpins[9], false);
-    } else{
-        gpio_put(LCDpins[9], true);
-    }
-    if (RS_PIN == 0){
-        E_INSTRUCTION();
-    } else{
-        E_DATA();
-    }
-    gpio_put(LCDpins[9], false);
-}
 
 void LCDwriteAscii(int code){
     decToBin(code);
     E_DATA();
+}
+
+void LCDdisplayControl(int display, int cursor, int blink){
+    char binary[] = "";
+    sprintf(binary, "00001%d%d%d", display, cursor, blink);
+    LCDsendRawInstruction(0, 0, binary);
 }
