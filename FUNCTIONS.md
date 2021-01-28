@@ -73,3 +73,7 @@ Which creates this:
 
 
 `LCDwriteCustomCharacter(int characterNum)` - Writes the custom character specified. (1 - 8)
+
+`void LCDshiftDisplay(int rl)` - Shift display based on `rl` (0 - left, 1 - right)
+
+`void LCDshiftCursor(int rl)` - Shift cursor based on `rl` (0 - left, 1 - right)

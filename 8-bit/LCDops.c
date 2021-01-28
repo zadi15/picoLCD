@@ -311,3 +311,19 @@ void LCDwriteCustomCharacter(int characterNum){
             break;
     }
 }
+
+void LCDshiftCursor(int rl){
+    if (rl == 0){
+        LCDsendRawInstruction(0,0,"00010000");
+    } else {
+        LCDsendRawInstruction(0,0,"00010100");
+    }
+}
+
+void LCDshiftDisplay(int rl){
+    if (rl == 0){
+        LCDsendRawInstruction(0,0,"00011000");
+    } else {
+        LCDsendRawInstruction(0,0,"00011100");
+    }
+}

@@ -40,4 +40,6 @@ int main(){
     LCDwriteAscii(226);
     LCDwriteCustomCharacter(2);
     LCDwriteCustomCharacter(8);
+    LCDshiftCursor(0);
+    LCDshiftDisplay(1);
 }
