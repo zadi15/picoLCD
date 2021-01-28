@@ -180,3 +180,134 @@ void LCDdisplayControl(int display, int cursor, int blink){
     sprintf(binary, "00001%d%d%d", display, cursor, blink);
     LCDsendRawInstruction(0, 0, binary);
 }
+
+void LCDcreateCharacter(int charnum, char line1[], char line2[], char line3[], char line4[], char line5[], char line6[], char line7[], char line8[]){
+    switch (charnum) {
+        case 1:
+            LCDsendRawInstruction(0,0,"01000000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 2:
+            LCDsendRawInstruction(0,0,"01001000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 3:
+            LCDsendRawInstruction(0,0,"01010000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 4:
+            LCDsendRawInstruction(0,0,"01011000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 5:
+            LCDsendRawInstruction(0,0,"01100000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 6:
+            LCDsendRawInstruction(0,0,"01101000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 7:
+            LCDsendRawInstruction(0,0,"01110000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+        case 8:
+            LCDsendRawInstruction(0,0,"01111000");
+            LCDsendRawInstruction(1,0,line1);
+            LCDsendRawInstruction(1,0,line2);
+            LCDsendRawInstruction(1,0,line3);
+            LCDsendRawInstruction(1,0,line4);
+            LCDsendRawInstruction(1,0,line5);
+            LCDsendRawInstruction(1,0,line6);
+            LCDsendRawInstruction(1,0,line7);
+            LCDsendRawInstruction(1,0,line8);
+            sleep_ms(8);
+            break;
+    }
+}
+
+void LCDwriteCustomCharacter(int characterNum){
+    sleep_ms(8);
+    switch (characterNum){
+        case 1:
+            LCDsendRawInstruction(1,0,"00000000");
+            break;
+        case 2:
+            LCDsendRawInstruction(1,0,"00000001");
+            break;
+        case 3:
+            LCDsendRawInstruction(1,0,"00000010");
+            break;
+        case 4:
+            LCDsendRawInstruction(1,0,"00000011");
+            break;
+        case 5:
+            LCDsendRawInstruction(1,0,"00000100");
+            break;
+        case 6:
+            LCDsendRawInstruction(1,0,"00000101");
+            break;
+        case 7:
+            LCDsendRawInstruction(1,0,"00000110");
+            break;
+        case 8:
+            LCDsendRawInstruction(1,0,"00000111");
+            break;
+    }
+}

@@ -27,15 +27,17 @@ int main(){
 
     //Initialize and clear the LCD, prepping it for characters / instructions
     LCDinit();
+    LCDcreateCharacter(2, "00000100", "00001110", "00001110", "00001110", "00001110", "00011111", "00000100", "00000000");
+    LCDcreateCharacter(8, "00000100", "00000100", "00000100", "00000111", "00000100", "00000100", "00000100", "00000100");
     LCDclear();
     sleep_ms(8);
     LCDgoto("00");
-    sleep_ms(8);
     //A few examples of function usage
     char message[81] = "Hello World Mr. LCD Screen!";
     LCDwriteMessage(message);
     sleep_ms(5);
-    LCDsendRawInstruction(0,0,"10000101");
-    LCDwriteAscii(226);
     LCDdisplayControl(1,0,1);
+    LCDwriteAscii(226);
+    LCDwriteCustomCharacter(2);
+    LCDwriteCustomCharacter(8);
 }

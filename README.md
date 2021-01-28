@@ -28,7 +28,7 @@ Current Version = 0.0.1
 The Pico should be wired to the LCD as follows for 8-bit operation, with the Pico being plugged
 into USB:
 
-![alt text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/picoLCD.png)
+![diagram depicting the wiring of the LCD to the PICO](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/picoLCD.png)
 
 Please note the LCD backlight should be powered by an external 5v power source, as the Pico may not be able to power both the LCD and
 backlight.
@@ -61,16 +61,24 @@ for(int gpio = 0; gpio < 11; gpio++){
 }
 </pre>
 
+And inside your `CMakeLists.txt`, add `main.c` and `generalOps.c` to your `add_executable()` e.g.
+
+<pre>
+add_executable(picoLCD
+    main.c
+    LCDops.c
+    generalOps.c
+)
+</pre>
+
 You're now able to use picoLCD's functions as explained in `picoLCD/FUNCTIONS.md`!
 
 An example of a program using picoLCD can be found in `main.c` that writes "Hello World Mr. LCD Screen!" and then inserts a character directly using it's ascii code (from the binary character code).
 
-![alt text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/LCD.jpg)
+![LCD screen displaying Hello World Mr. LCD](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/LCD.jpg)
 
 ## To Do
 
 --> Clean up FUNCTIONS.md
 
 --> Continue adding LCD functions
-
---> Add Custom character support
