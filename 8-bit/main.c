@@ -4,7 +4,7 @@
 #include "pico/binary_info.h"
 #include "LCDops.h"
 #include "generalOps.h"
-
+#include "presetChars.h"
 /*
 Copyright (c) 2021, zadi15 (https://github.com/zadi15/)
 License can be found at picoLCD/LICENSE
@@ -24,7 +24,7 @@ int main(){
         gpio_set_dir(LCDpins[gpio], true);
         gpio_put(LCDpins[gpio], false);
     }
-
+    
     //Initialize and clear the LCD, prepping it for characters / instructions
     LCDinit();
     /*

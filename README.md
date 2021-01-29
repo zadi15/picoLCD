@@ -22,7 +22,9 @@ This is known to work on the following LCD sizes in 8-bit mode:
 
 Basic Instructions are below, with more detailed function documentation in 'picoLCD/FUNCTIONS.md'
 
-Current Version = 0.0.1
+Demo .uf2 files can be found at `picoLCD/demos`.
+
+Current Version = 0.2.1
 ### Wiring the pico
 
 The Pico should be wired to the LCD as follows for 8-bit operation, with the Pico being plugged
@@ -72,6 +74,12 @@ add_executable(picoLCD
 </pre>
 
 You're now able to use picoLCD's functions as explained in `picoLCD/FUNCTIONS.md`!
+
+**Please Note**
+
+If you want to use the set of predesigned custom characters this library provides, detailed at the bottom of `FUNCTIONS.md`, you must also:
+
+Add `#include presetChars.h` to your main.c and `presetChars.c` to your `add_executable()` in CMakeLists.txt
 
 An example of a program using picoLCD can be found in `main.c` that writes "Hello World Mr. LCD Screen!" and then inserts a character directly using it's ascii code (from the binary character code).
 

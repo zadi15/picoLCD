@@ -78,6 +78,8 @@ Which creates this:
 
 `void LCDshiftCursor(int rl)` - Shift cursor based on `rl` (0 - left, 1 - right)
 
+## If you would like to use the following, please also add `#include presetChars.h` to your main.c and `presetChars.c` to your `add_executable()` in CMakeLists.txt
+
 `LCDactivatePreChar(int characterNum, int preset)` - Activates one of the pre-designed characters and writes it to a custom character slot.
 
 **Please Note**: While these are displayed using `LCDwriteCustomCharacter` like all custom characters, these also require moving the cursor after activating them. See note in `LCDwriteCustomCharacter` for more details

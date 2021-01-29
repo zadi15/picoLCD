@@ -10,6 +10,7 @@ add_executable(picoLCD
     main.c
     LCDops.c
     generalOps.c
+    presetChars.c
 )
 
 pico_enable_stdio_usb(picoLCD 1)
