@@ -12,3 +12,4 @@ void LCDcreateCharacter(int charnum, char line1[], char line2[], char line3[], c
 void LCDwriteCustomCharacter(int characterNum);
 void LCDshiftCursor(int rl);
 void LCDshiftDisplay(int rl);
+void LCDactivatePreChar(int characterNum, int preset);

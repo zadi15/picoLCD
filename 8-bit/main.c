@@ -27,8 +27,16 @@ int main(){
 
     //Initialize and clear the LCD, prepping it for characters / instructions
     LCDinit();
+    /*
     LCDcreateCharacter(2, "00000100", "00001110", "00001110", "00001110", "00001110", "00011111", "00000100", "00000000");
     LCDcreateCharacter(8, "00000100", "00000100", "00000100", "00000111", "00000100", "00000100", "00000100", "00000100");
+    */
+    LCDactivatePreChar(1, 9);
+    LCDactivatePreChar(2, 10);
+    LCDactivatePreChar(3, 11);
+    LCDactivatePreChar(4, 12);
+    LCDactivatePreChar(5, 13);
+    LCDactivatePreChar(6, 14);
     LCDclear();
     sleep_ms(8);
     LCDgoto("00");
@@ -38,8 +46,28 @@ int main(){
     sleep_ms(5);
     LCDdisplayControl(1,0,1);
     LCDwriteAscii(226);
+    LCDclear();
+    LCDwriteMessage("9 10 11 12 13 14");
+    LCDgoto("40");
+    LCDwriteCustomCharacter(1);
+    LCDwriteAscii(32);
+    LCDwriteCustomCharacter(2);
+    LCDwriteAscii(32);
+    LCDwriteAscii(32);
+    LCDwriteCustomCharacter(3);
+    LCDwriteAscii(32);
+    LCDwriteAscii(32);
+    LCDwriteCustomCharacter(4);
+    LCDwriteAscii(32);
+    LCDwriteAscii(32);
+    LCDwriteCustomCharacter(5);
+    LCDwriteAscii(32);
+    LCDwriteAscii(32);
+    LCDwriteCustomCharacter(6);
+    /*
     LCDwriteCustomCharacter(2);
     LCDwriteCustomCharacter(8);
     LCDshiftCursor(0);
     LCDshiftDisplay(1);
+    */
 }

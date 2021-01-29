@@ -21,9 +21,9 @@ Cursor: 0 - OFF, 1 - ON
 
 (Cursor)Blink: 0 - OFF, 1 - ON
 
-`LCDwriteCustomCharacter(int charnum, char line1[], char line2[], char line3[], char line4[], char line5[], char line6[], char line7[], char line8[])`
+`LCDcreateCharacter(int charnum, char line1[], char line2[], char line3[], char line4[], char line5[], char line6[], char line7[], char line8[])`
 
-LCDwriteCustomCharacter creates custom characters for you to use easily later on. The HD44780 supports up to 8 custom characters.
+LCDwcreateCharacter creates custom characters for you to use easily later on. The HD44780 supports up to 8 custom characters.
 
 ***Please Note***: After you have run this function, you must move the cursor using LCDgoto() before doing anything else (except if creating multiple custom characters in a row. you will only have to move the cursor after creating all characters).
 
@@ -77,3 +77,43 @@ Which creates this:
 `void LCDshiftDisplay(int rl)` - Shift display based on `rl` (0 - left, 1 - right)
 
 `void LCDshiftCursor(int rl)` - Shift cursor based on `rl` (0 - left, 1 - right)
+
+`LCDactivatePreChar(int characterNum, int preset)` - Activates one of the pre-designed characters and writes it to a custom character slot.
+
+**Please Note**: While these are displayed using `LCDwriteCustomCharacter` like all custom characters, these also require moving the cursor after activating them. See note in `LCDwriteCustomCharacter` for more details
+
+`characterNum` = 1-8, the custom character slot
+
+`preset` = The preset custom character you want to activate as shown below (1-14)
+
+![preset characters 1-8](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset1.jpg)
+
+![preset character 9-14](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset2.jpg)
+
+1 - Music
+
+2 - Check
+
+3 - Alarm bell
+
+4 - Up
+
+5 - Down
+
+6 - Locked
+
+7 - Unlocked
+
+8 - Play
+
+9 - Paused
+
+10 - Next Song
+
+11 - Previous Song
+
+12 - Repeat On
+
+13 - Shuffle On
+
+14 - Mute On
