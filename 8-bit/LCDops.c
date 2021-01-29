@@ -93,7 +93,7 @@ void LCDwriteMessage(char message[]){
                     decToBin(tmp);
                     E_DATA();
                 }
-            } else if (LCDpins[13] == 4){
+            } else if (LCDpins[12] == 4){
                 for (int i = 0; i < strlen(message); i++){
                     switch (i){
                         case 16:
@@ -126,7 +126,7 @@ void LCDwriteMessage(char message[]){
                     decToBin(tmp);
                     E_DATA();
                 }
-            } else if (LCDpins[13] == 4){
+            } else if (LCDpins[12] == 4){
                 for (int i = 0; i < strlen(message); i++){
                     switch (i){
                         case 20:

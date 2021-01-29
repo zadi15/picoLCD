@@ -12,7 +12,7 @@ This is known to work on the following LCD sizes in 8-bit mode:
 
 ![16x2 status](https://img.shields.io/badge/16x2-Tested-brightgreen)
 
-![20x4 status](https://img.shields.io/badge/20x4-Testing-orange)
+![20x4 status](https://img.shields.io/badge/20x4-Tested-brightgreen)
 
 ![40x2 status](https://img.shields.io/badge/40x2-Testing-orange)
 
