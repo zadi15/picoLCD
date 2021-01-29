@@ -86,11 +86,15 @@ Which creates this:
 
 `characterNum` = 1-8, the custom character slot
 
-`preset` = The preset custom character you want to activate as shown below (1-14)
+`preset` = The preset custom character you want to activate as shown below (1-30)
 
 ![preset characters 1-8](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset1.jpg)
 
-![preset character 9-14](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset2.jpg)
+![preset character 9-16](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset2.jpg)
+
+![preset character 17-24](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset3.jpg)
+
+![preset character 24-30](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset4.jpg)
 
 1 - Music
 
@@ -119,3 +123,35 @@ Which creates this:
 13 - Shuffle On
 
 14 - Mute On
+
+15 - :)
+
+16 - :(
+
+17 - Person
+
+18 - Heart
+
+19 - Battery_empty
+
+20 - Battery_1
+
+21 - Battery_2
+
+22 - Battery_3
+
+23 - Battery_full
+
+24 - Battery_charging
+
+25 - Ohm
+
+26 - Square Root
+
+27 - Pi
+
+28 - :D
+
+29 - >:(
+
+30 - :O

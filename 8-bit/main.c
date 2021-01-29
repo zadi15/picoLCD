@@ -10,7 +10,7 @@ Copyright (c) 2021, zadi15 (https://github.com/zadi15/)
 License can be found at picoLCD/LICENSE
 */
 
-int LCDpins[14] = {0,1,2,3,4,5,6,7,15,16,17,16,2};
+int LCDpins[14] = {0,1,2,3,4,5,6,7,15,16,17,20,4};
 
 int main(){
     bi_decl(bi_program_description("This is a work-in-progress example of interfacing with LCD Displays using HD44780 chips on the Raspberry Pi Pico!"));
@@ -24,7 +24,7 @@ int main(){
         gpio_set_dir(LCDpins[gpio], true);
         gpio_put(LCDpins[gpio], false);
     }
-    
+
     //Initialize and clear the LCD, prepping it for characters / instructions
     LCDinit();
     /*
@@ -46,28 +46,4 @@ int main(){
     sleep_ms(5);
     LCDdisplayControl(1,0,1);
     LCDwriteAscii(226);
-    LCDclear();
-    LCDwriteMessage("9 10 11 12 13 14");
-    LCDgoto("40");
-    LCDwriteCustomCharacter(1);
-    LCDwriteAscii(32);
-    LCDwriteCustomCharacter(2);
-    LCDwriteAscii(32);
-    LCDwriteAscii(32);
-    LCDwriteCustomCharacter(3);
-    LCDwriteAscii(32);
-    LCDwriteAscii(32);
-    LCDwriteCustomCharacter(4);
-    LCDwriteAscii(32);
-    LCDwriteAscii(32);
-    LCDwriteCustomCharacter(5);
-    LCDwriteAscii(32);
-    LCDwriteAscii(32);
-    LCDwriteCustomCharacter(6);
-    /*
-    LCDwriteCustomCharacter(2);
-    LCDwriteCustomCharacter(8);
-    LCDshiftCursor(0);
-    LCDshiftDisplay(1);
-    */
 }
