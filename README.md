@@ -12,9 +12,15 @@ This is known to work on the following LCD sizes in 8-bit mode:
 
 ![16x2 status](https://img.shields.io/badge/16x2-Tested-brightgreen)
 
+![LCD screen displaying Hello World Mr. LCD](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/screen_low.gif)
+
 ![20x4 status](https://img.shields.io/badge/20x4-Tested-brightgreen)
 
-![40x2 status](https://img.shields.io/badge/40x2-Testing-orange)
+![LCD screen displaying 8 custom characters](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset1.jpg)
+
+![40x2 status](https://img.shields.io/badge/40x2-Testing-brightgreen)
+
+![LCD screen displaying text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/40x2.jpg)
 
 ![16x4 status](https://img.shields.io/badge/16x4-Untested-red)
 

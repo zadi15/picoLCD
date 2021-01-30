@@ -148,6 +148,13 @@ void LCDwriteMessage(char message[]){
                 }
             }
             break;
+        case 40:
+            for (int i = 0; i < strlen(message); i++){
+                int tmp = (int)message[i];
+                decToBin(tmp);
+                E_DATA();
+            }
+            break;
         default:
         for (int i = 0; i < strlen(message); i++){
             if (i == 16) {
