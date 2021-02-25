@@ -1,24 +1,20 @@
 # picoLCD
 
 ## About picoLCD
-picoLCD is a collection of functions to make interfacing with HD44780 based LCD screens easier
-on the Raspberry Pi Pico. Rather than reading through data sheets to figure out the correct set
-of instructions to send to the screen, picoLCD attempts to make it a simpler process, while still being
-extremely versatile. It's as simple as copying the `.c & .h` files to your project, add some
-`#include`s, set some pins and off you go!
+picoLCD is a collection of functions to make interfacing with HD44780 (and other pin & instruction compatible chips such as the Sitronix ST7066) based LCD screens easier on the Raspberry Pi Pico. Rather than reading through data sheets to figure out the correct set of instructions to send to the screen, picoLCD attempts to make it a simpler process, while still being extremely versatile. It's as simple as copying the `.c & .h` files to your project, add some `#include`s, set some pins and off you go!
 
 This is still very much a work in progress.
 This is known to work on the following LCD sizes in 8-bit mode:
 
-![16x2 status](https://img.shields.io/badge/16x2-Tested-brightgreen)
+![16x2 status](https://img.shields.io/badge/16x2-Tested-brightgreen) (HD44780)
 
 ![LCD screen displaying Hello World Mr. LCD](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/screen_low.gif)
 
-![20x4 status](https://img.shields.io/badge/20x4-Tested-brightgreen)
+![20x4 status](https://img.shields.io/badge/20x4-Tested-brightgreen) (HD44780)
 
 ![LCD screen displaying 8 custom characters](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset1.jpg)
 
-![40x2 status](https://img.shields.io/badge/40x2-Testing-brightgreen)
+![40x2 status](https://img.shields.io/badge/40x2-Testing-brightgreen) (ST7066)
 
 ![LCD screen displaying text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/40x2.jpg)
 
