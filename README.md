@@ -14,11 +14,13 @@ This is known to work on the following LCD sizes in 8-bit mode:
 
 ![LCD screen displaying 8 custom characters](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset1.jpg)
 
-![40x2 status](https://img.shields.io/badge/40x2-Testing-brightgreen) (ST7066)
+![40x2 status](https://img.shields.io/badge/40x2-Tested-brightgreen) (ST7066)
 
 ![LCD screen displaying text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/40x2.jpg)
 
 ![16x4 status](https://img.shields.io/badge/16x4-Untested-red)
+
+![8x2 status](https://img.shields.io/badge/8x2-Untested-red)
 
 4-bit operation is also on the way once more progress is done on the current version.
 
@@ -26,7 +28,7 @@ Basic Instructions are below, with more detailed function documentation in 'pico
 
 Demo .uf2 files can be found at `picoLCD/demos`.
 
-Current Version = 0.2.1
+Current Version = 0.3.0
 ### Wiring the pico
 
 The Pico should be wired to the LCD as follows for 8-bit operation, with the Pico being plugged
@@ -92,3 +94,7 @@ An example of a program using picoLCD can be found in `main.c` that writes "Hell
 --> Clean up FUNCTIONS.md
 
 --> Continue adding LCD functions
+
+--> Expand custom characters
+
+--> Secret additions :D
