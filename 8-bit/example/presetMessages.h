@@ -1,0 +1,2 @@
+void LCDactivateImpMess();
+void LCDpreMessWrite();

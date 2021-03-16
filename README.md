@@ -8,15 +8,9 @@ This is known to work on the following LCD sizes in 8-bit mode:
 
 ![16x2 status](https://img.shields.io/badge/16x2-Tested-brightgreen) (HD44780)
 
-![LCD screen displaying Hello World Mr. LCD](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/screen_low.gif)
-
 ![20x4 status](https://img.shields.io/badge/20x4-Tested-brightgreen) (HD44780)
 
-![LCD screen displaying 8 custom characters](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/preset1.jpg)
-
 ![40x2 status](https://img.shields.io/badge/40x2-Tested-brightgreen) (ST7066)
-
-![LCD screen displaying text](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/40x2.jpg)
 
 ![16x4 status](https://img.shields.io/badge/16x4-Untested-red)
 
@@ -28,7 +22,10 @@ Basic Instructions are below, with more detailed function documentation in 'pico
 
 Demo .uf2 files can be found at `picoLCD/demos`.
 
-Current Version = 0.3.0
+Current Version = 0.5.0
+
+Changelog can be found at `picoLCD/CHANGELOG.md`.
+
 ### Wiring the pico
 
 The Pico should be wired to the LCD as follows for 8-bit operation, with the Pico being plugged
@@ -41,9 +38,11 @@ backlight.
 
 ## Basic Usage:
 
-All you need to do is move all `.c & .h` files (found at either `picoLCD/8-bit` for 8-bit operation or `picoLCD/4-bit` for 4-bit operation) except main.c to your project folder, and include the following:
+**Please Note: This describes the minimum steps needed to get an LCD functioning. An example `main.c` can be found at `picoLCD/8-bit/example`. Use of the more advanced features are detailed below.**
 
-At the top of your main file the following `#include`s:
+To get started all you need to do is move all `.c & .h` files (found at either `picoLCD/8-bit` for 8-bit operation) to your project folder, and do the following:
+
+At the top of your main file add the following `#include`s:
 
 <pre>
 #include "pico/binary_info.h"
@@ -67,10 +66,10 @@ for(int gpio = 0; gpio < 11; gpio++){
 }
 </pre>
 
-And inside your `CMakeLists.txt`, add `main.c` and `generalOps.c` to your `add_executable()` e.g.
+And inside your `CMakeLists.txt`, add `LCDops.c` and `generalOps.c` to your `add_executable()` e.g.
 
 <pre>
-add_executable(picoLCD
+add_executable(project
     main.c
     LCDops.c
     generalOps.c
@@ -79,15 +78,25 @@ add_executable(picoLCD
 
 You're now able to use picoLCD's functions as explained in `picoLCD/FUNCTIONS.md`!
 
-**Please Note**
+### Advanced Features
 
-If you want to use the set of predesigned custom characters this library provides, detailed at the bottom of `FUNCTIONS.md`, you must also:
+**Included Custom Characters**
 
-Add `#include presetChars.h` to your main.c and `presetChars.c` to your `add_executable()` in CMakeLists.txt
+If you want to use the set of pre-designed custom characters this library provides, detailed in `FUNCTIONS.md`, you must also:
 
-An example of a program using picoLCD can be found in `main.c` that writes "Hello World Mr. LCD Screen!" and then inserts a character directly using it's ascii code (from the binary character code).
+Move the `.c` and `.h` files found at `picoLCD/8-bit/presetChars/` to your project folder
 
-![LCD screen displaying Hello World Mr. LCD](https://raw.githubusercontent.com/zadi15/picoLCD/main/imgs/screen_low.gif)
+Add `#include presetChars.h` to your main.c and `presetChars.c` to your `add_executable()` in CMakeLists.txt.
+
+
+**Custom Message Presets**
+
+If you want to use the set of pre-designed custom message functions this library provides, detailed in `FUNCTIONS.md`, you must also:
+
+Move the `.c` and `.h` files found at `picoLCD/8-bit/presetMessages/` to your project folder
+
+Add `#include presetMessages.h` to your main.c and `presetMessages.c` to your `add_executable()` in CMakeLists.txt.
+
 
 ## To Do
 

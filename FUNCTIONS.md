@@ -1,3 +1,5 @@
+## Standard Functions
+
 `LCDinit()` - initializes the Display
 
 `LCDclear()` - clears all lines on LCD
@@ -78,7 +80,9 @@ Which creates this:
 
 `void LCDshiftCursor(int rl)` - Shift cursor based on `rl` (0 - left, 1 - right)
 
-## If you would like to use the following, please also add `#include presetChars.h` to your main.c and `presetChars.c` to your `add_executable()` in CMakeLists.txt
+## Pre-Designed Custom Characters
+
+**If you would like to use the following, please also add `#include presetChars.h` to your main.c and `presetChars.c` to your `add_executable()` in CMakeLists.txt**
 
 `LCDactivatePreChar(int characterNum, int preset)` - Activates one of the pre-designed characters and writes it to a custom character slot.
 
@@ -155,3 +159,15 @@ Which creates this:
 29 - >:(
 
 30 - :O
+
+## Preset Messages
+
+**If you would like to use the following, please also add `#include presetMessages.h` to your main.c and `presetMessages.c` to your `add_executable()` in CMakeLists.txt**
+
+`LCDactivateImpMess()` - Activates the "Important Message Recieved" preset. This automatically detects LCD screen size and outputs appropriate sized message. If an unsupported LCD is detected, defaults to 16x2.
+
+`LCDpreMessWrite(char mess[])` - Writes the actual message inside the last activated preset.
+
+To calculate the amount of text you can write, you multiply the number of lines by line length (e.g for a 20x4 screen you can write up to 80 characters). If the message is long enough, the function auto wraps and auto switches to the second half of the message after 3 seconds of showing the first half.
+
+The message should be one whole string passed to the function.
